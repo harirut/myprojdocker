@@ -1,10 +1,8 @@
-FROM alpine:3.16.2
+FROM nginx
+COPY . /usr/share/nginx/html
 
 
-COPY ./bin/todo-app /app/todo-
-app
-COPY ./public /app/public
-RUN chmod +x /app/todo-app
+RUN chmod +x /myprojdocker
 WORKDIR /app
-CMD ["./todo-app"]
-EXPOSE 3000
+CMD ["./myprojdocker"]
+EXPOSE 8080
